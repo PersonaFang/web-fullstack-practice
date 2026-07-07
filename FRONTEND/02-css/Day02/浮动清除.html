@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 200px;
+        background-color: lightblue;
+        overflow: hidden;
+        clear: both;
+      }
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        float: left;
+      }
+      .box2 {
+        width: 80px;
+        height: 80px;
+        background-color: green;
+        float: left;
+      }
+      .box3 {
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        float: right;
+      }
+
+      ul li {
+        float: left;
+        margin: 0 40px;
+      }
+      .box4 {
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        float: left;
+        margin-right: 5px;
+      }
+      .text {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(149, 190, 204);
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+    </div>
+
+
+    <div class="container">
+      <div class="box4"></div>
+      <div class="box4"></div>
+      <div class="box4"></div>
+    </div>
+    <div class="text">父元素大盒子和后续的文本元素盒子都发生了高度坍塌</div>
+  </body>
+</html>

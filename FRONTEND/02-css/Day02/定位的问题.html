@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+        background-color: lightblue;
+        position: relative;
+        margin-left: 100px;
+      }
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        position: relative;
+      }
+      .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(187, 102, 16);
+        position: absolute;
+        left: 50px;
+        top: 50px;
+      }
+      .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(187, 132, 202);
+        position: absolute;
+        left: 100px;
+        top: 100px;
+      }
+      .box4 {
+        width: 100px;
+        height: 300px;
+        background-color: rgb(39, 175, 119);
+        position: fixed;
+        right: 0ch;
+        bottom: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      相对具有定位的父级元素进行位置调整
+      <div class="box1">Box 1</div>
+      <div class="box2">Box 2</div>
+      <div class="box3">
+        Box 3(绝对定位可以脱离文档流，覆盖其他元素；可以覆盖多层，而浮动只有两层)
+      </div>
+      <div class="box4">
+        Box 4(固定定位相对于浏览器窗口进行定位，即使页面滚动也不会改变位置)
+      </div>
+    </div>
+  </body>
+</html>
