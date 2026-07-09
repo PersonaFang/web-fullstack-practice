@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- src：嵌入资源，会阻塞（等下载完才继续）-->
+    <img src="photo.jpg" /> ← 图片：下载图片并嵌入到这里
+    <script src="main.js"></script>
+    ← 脚本：下载并执行（会暂停HTML解析！） <iframe src="page.html"></iframe> ←
+    嵌入另一个页面
+
+    <!-- href：建立关联，不阻塞 -->
+    <link rel="stylesheet" href="style.css" /> ← 关联CSS（并行加载，不阻塞）
+    <a href="https://baidu.com">百度</a> ← 超链接（只是关联，点了才跳转）
+  </body>
+</html>

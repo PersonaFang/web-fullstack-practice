@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* ❌ 不推荐：@import 串行加载，性能差 */
+      @import url("reset.css");
+      @import url("layout.css");
+      @import url("theme.css");
+    </style>
+  </head>
+  <body>
+    <!-- ✅ 推荐：link 标签，并行加载 -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="theme.css" />
+  </body>
+</html>

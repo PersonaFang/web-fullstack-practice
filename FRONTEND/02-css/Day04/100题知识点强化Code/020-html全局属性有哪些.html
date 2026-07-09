@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 全页面唯一，像身份证号，不能重复 -->
+    <div id="main-header">主标题</div>
+    <p id="intro-text">介绍文字</p>
+
+    <!-- 用途：CSS 选择、JS 获取、页面内跳转 -->
+    <a href="#main-header">跳到标题位置</a> ← 页面内锚点
+    document.getElementById('main-header') ← JS 获取 #main-header { color: red;
+    } ← CSS 选择
+
+    <!-- 可以有多个值，用空格分隔 -->
+    <button class="btn btn-primary large">大号主要按钮</button>
+    <button class="btn btn-danger">危险按钮</button>
+    <p class="text highlight important">这段文字同时有3个类</p>
+
+    <!-- 类比：给物品贴标签，一件物品可以贴多个标签 -->
+
+    <!-- 直接在元素上写 CSS -->
+    <p style="color: red; font-size: 18px">这段文字是红色18号字</p>
+
+    <!-- ⚠️ 不推荐大量使用，难维护，优先级最高容易出问题 -->
+
+    <!-- 鼠标悬停时显示提示 -->
+    <abbr title="Cascading Style Sheets">CSS</abbr>
+    <button title="点击保存当前进度">💾 保存</button>
+    <img src="chart.png" title="2025年第一季度销售数据折线图" alt="..." />
+    <!-- 隐藏元素（和 display:none 效果相同）-->
+    <div hidden>这段内容被隐藏，用户看不到</div>
+
+    <!-- JS 控制显示/隐藏 -->
+    <script>
+      document.querySelector("#tip").hidden = false; // 显示
+      document.querySelector("#tip").hidden = true; // 隐藏
+    </script>
+    
+    <button data-action="delete" data-item-id="42">删除</button>
+
+    <!-- 让用户直接在网页上编辑文字 -->
+    <p contenteditable="true">点我可以编辑这段文字</p>
+    <div contenteditable="true">这个区域也可以编辑</div>
+
+    <!-- 应用场景：在线编辑器、富文本输入框 -->
+
+    <!-- 控制 Tab 键的跳转顺序 -->
+    <input tabindex="1">   ← 第一个被 Tab 选中
+    <input tabindex="3">   ← 第三个
+    <input tabindex="2">   ← 第二个
+
+    <div tabindex="0">     ← 加入 Tab 顺序（div 默认不能被 Tab 选中）
+    <div tabindex="-1">    ← 可以被 JS focus()，但不在 Tab 顺序中
+
+    <img src="photo.jpg" draggable="true">   ← 可以被拖动
+    <p draggable="false">这段文字不能拖动</p>
+  </body>
+</html>

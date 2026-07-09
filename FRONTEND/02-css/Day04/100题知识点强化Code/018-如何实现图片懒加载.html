@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 只需要加一个属性！浏览器自动处理 -->
+    <img 
+    src="real-image.jpg" 
+    loading="lazy"         ← 就这一个属性
+    alt="图片描述"
+    width="400"            ← 建议写宽高，防止布局抖动
+    height="300"
+    >
+    <!-- 先用 data-src 存真实地址，src 用占位图 -->
+    <img 
+    src="placeholder.jpg"        ← 先显示小占位图（很小，加载快）
+    data-src="real-image.jpg"    ← 真实图片地址存在 data-src
+    class="lazy-img"
+    alt="图片描述"
+    >    
+</body>
+</html>

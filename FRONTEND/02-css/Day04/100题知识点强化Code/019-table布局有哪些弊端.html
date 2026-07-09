@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ❌ 用 table 做布局（20年前常见的写法）-->
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="3"><header>导航栏</header></td>
+      </tr>
+      <tr>
+        <td width="200">左侧菜单</td>
+        <td>主内容区</td>
+        <td width="150">右侧栏</td>
+      </tr>
+      <tr>
+        <td colspan="3"><footer>页脚</footer></td>
+      </tr>
+    </table>
+
+    <!-- ✅ 现代写法：用 CSS Flexbox 或 Grid 做布局 -->
+    <div class="layout">
+      <header>导航栏</header>
+      <div class="body">
+        <nav>左侧菜单</nav>
+        <main>主内容区</main>
+        <aside>右侧栏</aside>
+      </div>
+      <footer>页脚</footer>
+    </div>
+  </body>
+</html>

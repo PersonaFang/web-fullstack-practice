@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Canvas：用 JS 命令式绘制 -->
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <script>
+      const ctx = document.getElementById("myCanvas").getContext("2d");
+
+      // 画一个红色圆圈
+      ctx.beginPath();
+      ctx.arc(100, 100, 50, 0, Math.PI * 2);
+      ctx.fillStyle = "red";
+      ctx.fill();
+
+      // 注意：画完后，这个圆圈就是一堆像素点了
+      // 没有"圆圈对象"，不能单独给它绑事件
+    </script>
+    
+    <!-- SVG：声明式，每个形状是独立元素 -->
+    <svg width="200" height="200">
+      <!-- 一个红色圆圈，它是一个独立的 DOM 元素！ -->
+      <circle
+        cx="100"
+        cy="100"
+        r="50"
+        fill="red"
+        onclick="alert('点击了圆圈！')"
+        ←
+        可以直接绑事件
+      />
+    </svg>
+  </body>
+</html>

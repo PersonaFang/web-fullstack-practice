@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1. email：自动校验邮箱格式，手机会弹出带@的键盘 -->
+    <input type="email" placeholder="请输入邮箱" />
+    <!-- 提交时浏览器自动检测格式，无需 JS -->
+
+    <!-- 2. tel：手机端弹出数字键盘 -->
+    <input type="tel" placeholder="请输入手机号" />
+
+    <!-- 3. number：只能输数字，可以设范围 -->
+    <input type="number" min="0" max="100" step="5" />
+    <!-- min=最小值，max=最大值，step=每次增减的幅度 -->
+
+    <!-- 4. range：滑动条 -->
+    <input type="range" min="0" max="100" value="50" />
+    <!-- 常见于音量调节、价格区间筛选 -->
+
+    <!-- 5. date：日期选择器 -->
+    <input type="date" />
+    <!-- 浏览器弹出日历，用户点击选择，不用自己写日历组件！ -->
+
+    <!-- 6. time：时间选择器 -->
+    <input type="time" />
+
+    <!-- 7. datetime-local：日期+时间 -->
+    <input type="datetime-local" />
+
+    <!-- 8. month：年月选择 -->
+    <input type="month" />
+
+    <!-- 9. week：年周选择 -->
+    <input type="week" />
+
+    <!-- 10. color：颜色选择器 -->
+    <input type="color" value="#1677ff" />
+    <!-- 浏览器弹出取色盘 -->
+
+    <!-- 11. search：搜索框（有清除按钮×）-->
+    <input type="search" placeholder="搜索..." />
+
+    <!-- 12. url：校验 URL 格式 -->
+    <input type="url" placeholder="https://..." />
+  </body>
+</html>

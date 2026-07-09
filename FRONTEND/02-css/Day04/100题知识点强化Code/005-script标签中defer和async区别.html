@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <!-- ❌ 放在 head 里没有 defer/async：页面会白屏等 JS 下载 -->
+  <script src="heavy.js"></script>
+
+  <!-- ✅ 加 defer：异步下载，HTML 解析完才执行，有顺序保证 -->
+  <script src="jquery.js" defer></script>
+  <script src="main.js" defer></script>  <!-- main.js 一定在 jquery.js 之后执行 -->
+
+  <!-- ✅ 加 async：异步下载，下载完立刻执行，适合独立脚本 -->
+  <script src="analytics.js" async></script>  <!-- 统计脚本，不依赖其他JS -->
+</head>
+<body>
+    
+</body>
+</html>

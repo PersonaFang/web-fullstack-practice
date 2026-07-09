@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img   src="cat.jpg"   alt="一只橘色小猫坐在窗台上" title="这是我家养的猫，叫旺财"  />
+    <!-- ✅ 有意义的图片：写有意义的 alt -->
+    <img src="product.jpg" alt="iPhone 15 Pro 钛金属 256G 手机正面图" />
+
+    <!-- ✅ 装饰性图片（如背景花纹）：alt 写空字符串，让屏幕阅读器忽略 -->
+    <img src="decoration.png" alt="" />
+
+    <!-- ❌ 错误：alt 写"图片"、"image"这种无意义内容 -->
+    <img src="product.jpg" alt="图片" />
+    <!-- 废话，当然是图片 -->
+    <img src="product.jpg" alt="product.jpg" />
+    <!-- 把文件名写进去，毫无意义 -->
+  </body>
+</html>

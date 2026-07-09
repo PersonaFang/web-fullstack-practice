@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- ❌ 不好的做法：script 在 head 里 -->
+    <script src="jquery.js"></script>   <!-- 下载这个文件可能要500ms -->
+    <script src="main.js"></script>     <!-- 再等200ms -->
+
+    <!-- 现代更好的做法：用 defer，可以放在 head 里 -->
+    <script src="main.js" defer></script>  <!-- 不阻塞解析，解析完再执行 -->
+</head>
+<body>
+    <!-- 在 JS 加载完之前，用户看到空白页！-->
+    <h1>欢迎光临</h1>
+        <!-- JS 放最后，等 DOM 都渲染完了再加载
+    <script src="jquery.js"></script>
+    <script src="main.js"></script> -->
+
+  <!-- ✅ 放 body 底部，#btn 已经在 DOM 里了 -->
+  <button id="btn">点我</button>
+  <script>
+    document.getElementById('btn').onclick = function() {
+      alert('找到了！'); // 正常执行
+    };
+  </script>
+</body>
+</html>
