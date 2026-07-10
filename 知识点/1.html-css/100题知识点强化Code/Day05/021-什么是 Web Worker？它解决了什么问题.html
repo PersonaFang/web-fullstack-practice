@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        // 主线程 main.js
+        const worker = new Worker('worker.js');
+
+        // 主线程发消息给 Worker
+        worker.postMessage({ data: [1, 2, 3, ...100000个数字] });
+
+        // 主线程接收 Worker 的结果
+        worker.onmessage = function(e) {
+          console.log('计算结果：', e.data);  // 页面不会卡
+        };
+
+       // worker.js（后台线程，独立文件）
+       onmessage = function(e) {
+        const result = e.data.reduce((a, b) => a + b, 0); // 耗时计算
+        postMessage(result); // 把结果发回主线程
+       };
+    </script>
+  </body>
+</html>

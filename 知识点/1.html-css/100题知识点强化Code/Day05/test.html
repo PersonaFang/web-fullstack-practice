@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .square {
+        width: 150px;
+        height: 150px;
+        background-color: rgb(121, 63, 12);
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        pointer-events: none;
+      }
+      .circle {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background-color: rgb(137, 184, 237);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="circle">
+      <div class="square"></div>
+    </div>
+
+    <script>
+      const circle = document.querySelector(".circle");
+
+      let isDragging = false;
+
+      circle.addEventListener("mousedown", function () {
+        isDragging = true;
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        if (!isDragging) return;
+
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
+        const distanceX = Math.abs(e.clientX - centerX);
+        const distanceY = Math.abs(e.clientY - centerY);
+
+        let newWidth = distanceX * 2;
+        let newHeight = distanceY * 2;
+
+        // 限制最小尺寸，防止太小看不见
+        if (newWidth < 200) {
+          newWidth = 200;
+        }
+
+        if (newHeight < 200) {
+          newHeight = 200;
+        }
+
+        circle.style.width = newWidth + "px";
+        circle.style.height = newHeight + "px";
+      });
+
+      document.addEventListener("mouseup", function () {
+        isDragging = false;
+      });
+    </script>
+  </body>
+</html>

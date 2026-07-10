@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ❌ 没有可访问性的写法 -->
+<div onclick="closeModal()">×</div>
+
+<!-- ✅ 有可访问性的写法 -->
+<button 
+  aria-label="关闭弹窗"     <!-- 给屏幕阅读器一个描述 -->
+  onclick="closeModal()"
+>×</button>
+
+<!-- aria-hidden：装饰性元素，让屏幕阅读器忽略它 -->
+<span aria-hidden="true">🎉</span>
+
+<!-- role：声明元素的角色 -->
+<div role="button" tabindex="0">自定义按钮</div>
+
+<!-- aria-expanded：告知用户下拉菜单是否展开 -->
+<button aria-expanded="false" aria-controls="menu">菜单</button>
+<ul id="menu" hidden>...</ul>
+
+<!-- aria-live：动态内容更新时通知屏幕阅读器 -->
+<div aria-live="polite">正在加载...</div>
+</body>
+</html>
