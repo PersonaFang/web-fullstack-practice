@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .root{
+            width: 500px;
+            height: 500px;
+            background-color: antiquewhite
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(128, 80, 18)           
+        }
+    </style>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <a href="https://baidu.com" id="bd">百度搜索</a>
+    <script>
+      var btn = document.getElementById("btn");
+      // e-Event事件对象，其实就是参数
+      btn.onclick = function (e) {
+        e.target.innerHTML = "点击之后";
+        console.log(e.type);
+      };
+
+      var it = document.getElementById("bd");
+      it.onclick = function (e) {
+        e.preventDefault();
+        console.log("点击了百度");
+      };
+    </script>
+
+    <div class="root" id="root">
+        父
+        <div class="box" id="box">子</div>
+    </div>
+    <script>
+        var r = document.getElementById("root")
+        var b = document.getElementById("box")
+        r.onclick = function(){
+            console.log("root")
+        }
+        b.onclick = function(e){
+            e.stopPropagation();
+            console.log("box")
+        }
+    </script>
+  </body>
+</html>

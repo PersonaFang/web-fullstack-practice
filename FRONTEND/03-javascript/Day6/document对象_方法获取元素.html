@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>hello1</div>
+    <div>hello2</div>
+    <p class = "text">hello</p>
+
+    <input name="login">登录</input>
+    <div id="root">哈哈哈</div>
+    <div class="nav">nav1</div>
+    <div class="nav">nav2</div>
+    <script>
+        console.log(document);
+        if(document.nodeType === 9){
+            console.log("顶层结点");
+        }
+
+        var div1 = document.getElementsByTagName("div");
+        console.log(div1);
+        console.log(div1[0]);
+        console.log(div1[1]);
+        div1[0].innerHTML = "hello1-HaHa";
+
+        var text  = document.getElementsByClassName(text);
+        text.innerHTML = "hello-HaHa";
+        var name = document.getElementsByName("login");
+        console.log(name);
+        var root = document.querySelector(".nav");
+        console.log(root);
+        var roots = document.querySelectorAll(".nav");
+        console.log(roots);
+
+    </script>
+</body>
+</html>
