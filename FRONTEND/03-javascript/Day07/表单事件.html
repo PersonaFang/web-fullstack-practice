@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="username"  name="username">
+        <button type="button" id="resetBtn">重置</button>
+        <button type="submit">提交表单</button>
+    </form>
+    
+    <script>
+        var username = document.getElementById("username");
+        username.oninput = function(e){
+            console.log(e.target.value)
+        }
+        username.addEventListener("select", function(e){
+            console.log(e.type)
+            console.log(e.target.value)
+        })
+        username.addEventListener("change", function(e){
+            console.log("修改了值")
+        })        
+
+        var myForm = document.getElementById("myForm");
+        var resetBtn = document.getElementById("resetBtn");
+        
+        resetBtn.addEventListener("click", function(e){
+            myForm.reset();
+        })
+
+        myForm.addEventListener("submit", function(e) {
+            //e.preventDefault();
+            console.log("想做的事情");
+        });
+    </script>
+</body>
+</html> 

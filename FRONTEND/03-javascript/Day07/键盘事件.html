@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <input type="password" id="password">
+
+    <script>
+        var un = document.getElementById("username");
+        un.onkeydown = function(){
+            console.log("按下了");
+        }
+        un.onkeyup = function(e){
+            console.log("抬起了");
+            console.log(e.target.value);
+        }
+        un.onkeypress = function(e){
+            console.log("keypress");
+        }
+
+        var pw = document.getElementById("password");
+        pw.onkeyup = function(e){
+            console.log(e.keyCode);
+            if(e.keyCode == 13){
+                console.log("开始登录");
+            }
+        }
+    </script>
+</body>
+</html>
