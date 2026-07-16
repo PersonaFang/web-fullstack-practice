@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function GetJSON(url){
+            const promise = new Promise(function(resolve, reject){
+                const handler = function(){
+                    if(this.readyState !== 4){
+                        //0 1 2 3 4
+                        return; 
+                    }
+                    if(this.status === 200){
+                        resolve(this.response);
+                    }else{
+                        reject(new Error(this.statusText));
+                    }
+                }
+                const client = new XMLHttpRequest();
+                client.open("GET", url);
+                client.onreadystatechange = handler;
+                client.responseType = "json";
+                client.setRequestHeader("Accept", "application/json");
+                client.send();
+            })
+            return promise;
+        }
+
+        const promise = GetJSON("https://jsonplaceholder.typicode.com/todos/1");
+        promise.then(function(data){
+            console.log("请求成功：", data);
+        },function(error){
+            console.log("请求失败：", error);
+        });
+    </script>
+
+</body>
+</html>
