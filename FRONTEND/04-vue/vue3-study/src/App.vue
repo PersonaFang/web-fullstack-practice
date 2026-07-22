@@ -1,24 +1,40 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  App.vue页面
+  <!-- 3.显示组件 -->
+  <MyComponent/> 
+  <my-component/>
+  <MyComponent04 :title="title" :age="age" :names="names"/>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <p>{{ message }}</p>
+  <MyComponent05 @onEvent="getDataHandle"/>
 </template>
+
+<script>
+  import MyComponent from "./components/03-MyComponent.vue"
+  import MyComponent04 from "./components/04-Props组件交互.vue" //1.引入组件
+  import MyComponent05 from "./components/05-自定义事件组件交互-反向传递数据.vue"
+  export default{
+    name:'App',
+    components:{ //2.挂载组件
+      MyComponent,
+      MyComponent04,
+      MyComponent05
+    },
+    data(){
+      return{
+        title:"我是一个标题",
+        age:20,
+        names:["iwen","ime","frank"],
+        message:""
+      }
+    },
+    methods:{
+      getDataHandle(data){
+        this.message = data;
+      }
+    }
+  }
+</script>
 
 <style scoped>
 header {
